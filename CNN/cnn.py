@@ -34,7 +34,7 @@ def create_cnn_model(input_shape):
     return model
 
 # Load the CSV file
-data = pd.read_csv("./CNN/dataset/labels_tesserct.csv", delimiter='|')
+data = pd.read_csv("labels_tesseract.csv", delimiter='|')
 # Example: (filename, output)
 # "image1.jpg", "Showing 1-25 of 3,256 res"
 
@@ -89,7 +89,7 @@ history = model.fit(
     {'n1': y_n1_train, 'n2': y_n2_train},
     validation_data=(X_val, {'n1': y_n1_val, 'n2': y_n2_val}),
     batch_size=32,
-    epochs=30
+    epochs=20
 )
 
 # Evaluate the model
