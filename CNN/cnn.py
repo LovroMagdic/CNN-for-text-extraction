@@ -34,7 +34,7 @@ def create_cnn_model(input_shape):
     return model
 
 # Load the CSV file
-data = pd.read_csv("./CNN/dataset/labels.csv", delimiter='|')
+data = pd.read_csv("./CNN/dataset/labels_tesserct.csv", delimiter='|')
 # Example: (filename, output)
 # "image1.jpg", "Showing 1-25 of 3,256 res"
 
@@ -97,7 +97,7 @@ loss, n1_loss, n2_loss, n1_mae, n2_mae = model.evaluate(X_val, {'n1': y_n1_val, 
 print(f"Validation MAE for n1: {n1_mae:.2f}, n2: {n2_mae:.2f}")
 
 # save model
-model.save('my_cnn_model.keras')
+model.save('model_tesseract_anno.keras')
 
 # Make predictions
 predictions = model.predict(X_val)
